@@ -60,15 +60,20 @@
 						<td>至 <input name="support_date_e" value="" class="datepicker"></td>
 					</tr>
 					<tr>
-						<td>建立者</td>
-						<td colspan="2"><?php 
-				$query = $this->db->get_where('global_user', array('username'=>$_SESSION['username']));
-				foreach ($query->result() as $row){ ?>
-				<input name="creator" value="<?php echo $row->name; ?>" readonly>
-			<?php } ?></td>
+						<td>費用</td>
+						<td colspan="2"><input name="fee" value=""></td>
+					</tr>
+					<tr>
+						<td>備註</td>
+						<td colspan="2"><textarea rows="5" cols="70" name="remark" value=""></textarea></td>
 					</tr>
 				</tbody>
 			</table>
+			<?php 
+				$query = $this->db->get_where('global_user', array('username'=>$_SESSION['username']));
+				foreach ($query->result() as $row){ ?>
+				<input type="hidden" name="creator" value="<?php echo $row->name; ?>">
+			<?php } ?>
 			<input type="submit" name="submit" class="uk-button" value="建立">
 		</form>
 	</div>

@@ -23,6 +23,8 @@
 			$spts= $row->spts;
 			$support_date_s= $row->support_date_s;
 			$support_date_e= $row->support_date_e;
+			$fee= $row->fee;
+			$remark= $row->remark;
 			$creator= $row->creator;
 	
 		} ?>
@@ -51,6 +53,14 @@
 						<td>免費支援期間</td>
 						<td width="100"><input name="support_date_s" value="<?php echo $support_date_s; ?>" class="datepicker"></td>
 						<td>至 <input name="support_date_e" value="<?php echo $support_date_e; ?>" class="datepicker"></td>
+					</tr>
+					<tr>
+						<td>費用</td>
+						<td colspan="2"><input name="fee" value="<?php echo $fee; ?>"></td>
+					</tr>
+					<tr>
+						<td>備註</td>
+						<td colspan="2"><textarea rows="5" cols="70" name="remark" value=""><?php echo $remark; ?></textarea></td>
 					</tr>
 				</tbody>
 			</table>

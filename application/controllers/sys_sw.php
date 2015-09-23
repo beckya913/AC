@@ -63,6 +63,8 @@ class Sys_sw extends CI_Controller {
 					'spts' => $this->input->post('spts'),
 					'support_date_s' => $this->input->post('support_date_s'),
 					'support_date_e' => $this->input->post('support_date_e'),
+					'fee' => $this->input->post('fee'),
+					'remark' => $this->input->post('remark'),
 					'creator' => $this->input->post('creator')
 				);
 		$this->Git_db->insert_sw($newRow);
@@ -107,6 +109,8 @@ class Sys_sw extends CI_Controller {
 					'spts' => $this->input->post('spts'),
 					'support_date_s' => $this->input->post('support_date_s'),
 					'support_date_e' => $this->input->post('support_date_e'),
+					'fee' => $this->input->post('fee'),
+					'remark' => $this->input->post('remark'),
 					'creator' => $this->input->post('creator')
 				);
 
