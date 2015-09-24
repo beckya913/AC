@@ -46,14 +46,14 @@
 							<h3>RMA 管理</h3>
 							<ul class="uk-list uk-list-line">
 								<li><a href="<?php echo base_url(); ?>sys_rma/create" >新增記錄</a></li>
-								<li><a href="<?php echo base_url(); ?>sys_rma/view" >更新記錄</a></li>
+								<li><a href="<?php echo base_url(); ?>sys_rma/view" >檢視記錄</a></li>
 							</ul>
 						</td>
 						<td>
 							<h3>軟體管理</h3>
 							<ul class="uk-list uk-list-line">
 								<li><a href="<?php echo base_url(); ?>sys_sw/create" >新增記錄</a></li>
-								<li><a href="<?php echo base_url(); ?>sys_sw/view" >更新記錄</a></li>
+								<li><a href="<?php echo base_url(); ?>sys_sw/view" >檢視記錄</a></li>
 							</ul>
 						</td>
 						<td><a href="<?php echo base_url(); ?>portal/view">搜尋</a></td>
@@ -68,7 +68,7 @@
 		<tbody>
 			<tr>
 				<td class="uk-text-center">
-					<p>Copyright@Global Instrument Technology INC. | Version:1.0 | Released on 2015.08 | Created by Becky Tsai </p>
+					<p>Copyright@Global Instrument Technology INC. | Version:1.1 | Released on 2015.09 | Created by Becky Tsai </p>
 				</td>
 			</tr>
 		</tbody>

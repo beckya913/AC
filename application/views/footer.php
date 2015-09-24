@@ -3,7 +3,7 @@
 		<tbody>
 			<tr>
 				<td valign="top">
-					<p class="uk-text-left">Version:1.0 / Released on 2015/08 </p>
+					<p class="uk-text-left">Version:1.1 / Released on 2015/09 </p>
 				</td>
 				<td>
 					<p>Copyright@Global Instrument Technology INC.</p>
