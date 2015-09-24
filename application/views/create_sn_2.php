@@ -38,7 +38,7 @@
 		<form action="action_create_sn" method="POST" enctype="" class="uk-form">
 			<h2 class="uk-text-primary">新增序號記錄</h2>
 			<hr>
-			<table class="uk-table">
+			<table class="uk-table uk-width-1-1">
 				<tr><td colspan="3">
 					<table id="basic_info"><!--產品基本資料-->
 						<tbody>
@@ -53,7 +53,7 @@
 					</table>
 					<hr>
 				</td></tr>
-				<tr><td valign="top" width="306">
+				<tr><td valign="top" class="uk-width-1-3">
 					
 					<h3 class="uk-text-primary">售出記錄</h3>
 					<table>
@@ -67,13 +67,10 @@
 							<tr><td>保固</td><td><input name="s_warranty" value=""></td></tr>
 						</tbody>
 					</table>
-				</td><td valign="top" class="border" >
+				</td><td valign="top" class="border uk-width-1-3" >
 					<h3 class="uk-text-primary">借出記錄</h3>
 					<table>
 						<tbody>
-							<tr><td>整機代號</td><td><input name="l_id" value=""></td></tr>
-							<tr><td>NI 出廠日期</td><td><input name="l_ni_date" value="" class="datepicker"></td></tr>
-							<tr><td>NI 訂單號碼</td><td><input name="l_ni_po" value=""></td></tr>
 							<tr><td>借出日期</td><td><input name="l_date" value="" class="datepicker"></td></tr>
 							<tr><td>歸還日期</td><td><input name="l_return_date" value="" class="datepicker"></td></tr>
 							<tr><td>11AC Dongle</td>
@@ -102,14 +99,11 @@
 							</tr>
 						</tbody>
 					</table>
-				</td><td valign="top" class="border" >
+				</td><td valign="top" class="border uk-width-1-3" >
 					<h3 class="uk-text-primary">借入記錄</h3>
 					<table>
 						<tbody>
-							<tr><td>整機代號</td><td><input name="b_id" value=""></td></tr>
-							<tr><td>NI 出廠日期</td><td><input name="b_ni_date" value="" class="datepicker"></td></tr>
-							<tr><td>NI 訂單號碼</td><td><input name="b_ni_po" value=""></td></tr>
-							<tr><td>借出日期</td><td><input name="b_date" value="" class="datepicker"></td></tr>
+							<tr><td>借入日期</td><td><input name="b_date" value="" class="datepicker"></td></tr>
 							<tr><td>歸還日期</td><td><input name="b_return_date" value="" class="datepicker"></td></tr>
 							<tr><td>11AC Dongle</td>
 								<td>

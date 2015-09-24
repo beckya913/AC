@@ -45,6 +45,24 @@ class Git_db extends CI_Model {
 		
 	}
 
+	function get_sn_lend_not_return(){
+	
+		$query = $this->db->order_by('l_date', 'desc')
+						  ->where('l_return_date','0000-00-00')
+						  ->get('sn_record'); 
+		return $query->result();
+		
+	}
+
+	function get_sn_lend_returned(){
+	
+		$query = $this->db->order_by('l_date', 'desc')
+						  ->where('l_return_date !=','0000-00-00')
+						  ->get('sn_record'); 
+		return $query->result();
+		
+	}
+
 	function get_sn_detail_all($id){
 	
 		$query = $this->db->get_where('sn_record',array('id'=>$id));

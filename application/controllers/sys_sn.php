@@ -222,5 +222,21 @@ class Sys_sn extends CI_Controller {
 					window.location.href='view';
 				  </script></body></html>";
 	}
+
+	public function view_lend(){
+		
+		$this->load->model('Git_db');
+		$data['results'] = $this->Git_db->get_sn_lend_not_return();
+		$this->load->view('view_sn_lend', $data);
+		
+	}
+
+	public function view_lend_returned(){
+		
+		$this->load->model('Git_db');
+		$data['results'] = $this->Git_db->get_sn_lend_returned();
+		$this->load->view('view_sn_lend', $data);
+		
+	}
 	//End
 }
