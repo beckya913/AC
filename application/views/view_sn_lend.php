@@ -1,7 +1,7 @@
 <?php include("session.php"); //Check login or not ?>
 <html>
 <head>
-	<title>瀏覽序號記錄</title>
+	<title>瀏覽序號記錄 - 借出</title>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/uikit.css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/custom.css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery-ui.css">
@@ -81,7 +81,7 @@
 				echo "您查詢的區間：".$startdate. "至" .$enddate;
 			}
 		?>
-			<h2 class="uk-text-primary">序號記錄列表</h2>
+			<h2 class="uk-text-primary">序號記錄列表 - 借出</h2>
 		<hr>
 		<table id="sn_list" class="uk-table uk-table-striped">
 			<thead>

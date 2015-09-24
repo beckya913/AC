@@ -40,7 +40,9 @@ class Git_db extends CI_Model {
 
 	function get_sn_detail(){
 	
-		$query = $this->db->order_by('s_git_date', 'desc')->get('sn_record'); 
+		$query = $this->db->order_by('s_git_date', 'desc')
+						  ->where('s_git_date !=','0000-00-00')
+						  ->get('sn_record'); 
 		return $query->result();
 		
 	}
@@ -58,6 +60,24 @@ class Git_db extends CI_Model {
 	
 		$query = $this->db->order_by('l_date', 'desc')
 						  ->where('l_return_date !=','0000-00-00')
+						  ->get('sn_record'); 
+		return $query->result();
+		
+	}
+
+	function get_sn_borrow_not_return(){
+	
+		$query = $this->db->order_by('b_date', 'desc')
+						  ->where('b_return_date','0000-00-00')
+						  ->get('sn_record'); 
+		return $query->result();
+		
+	}
+
+	function get_sn_borrow_returned(){
+	
+		$query = $this->db->order_by('b_date', 'desc')
+						  ->where('b_return_date !=','0000-00-00')
 						  ->get('sn_record'); 
 		return $query->result();
 		

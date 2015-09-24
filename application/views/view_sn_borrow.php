@@ -1,7 +1,7 @@
 <?php include("session.php"); //Check login or not ?>
 <html>
 <head>
-	<title>瀏覽序號記錄 - 售出</title>
+	<title>瀏覽序號記錄 - 借入</title>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/uikit.css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/custom.css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery-ui.css">
@@ -38,6 +38,7 @@
 			});
 		}
 	</script>
+	
 </head>
 <body>
 <?php include("header.php"); //表頭 ?>
@@ -46,7 +47,15 @@
 		<?php include("navigation.php"); //左側導覽列 ?>
 	</div>
 	<div class="uk-width-8-10 form_margin">
-		<table>
+		<table class="uk-float-right uk-width-1-1">
+			<tr>
+				<td colspan="4">
+					<p class="uk-text-primary uk-text-bold">分類檢視：
+						<a href="<?php echo base_url(); ?>sys_sn/view_borrow">未歸還</a> ｜ 
+						<a href="<?php echo base_url(); ?>sys_sn/view_borrow_returned">已歸還</a>
+					</p>
+				</td>
+			</tr>
 			<tr>
 				<td valign="top"><p class="uk-text-primary uk-text-bold">關鍵字搜尋</p></td>
 				<td>
@@ -65,17 +74,18 @@
 				</td>
 				<!--<td><a class="uk-button uk-button-success" href="<?php echo base_url(); ?>sys_sn/view">重置</a></td>-->
 			</tr>
+			
 		</table>
 		<?php 
 			if (isset($startdate)) {
 				echo "您查詢的區間：".$startdate. "至" .$enddate;
 			}
 		?>
-		<h2 class="uk-text-primary">序號記錄列表 - 售出</h2>
+			<h2 class="uk-text-primary">序號記錄列表 - 借入</h2>
 		<hr>
 		<table id="sn_list" class="uk-table uk-table-striped">
 			<thead>
-				<tr><th>客戶</th><th>產品</th><th>序號</th><th>NI訂單號碼</th><th>出貨日期</th></tr>
+				<tr><th>客戶</th><th>產品</th><th>序號</th><th>借入日期</th><th>歸還日期</th><th></th></tr>
 			</thead>
 			<tbody>
 				<?php foreach($results as $row){ ?>
@@ -83,8 +93,8 @@
 					<td width="100"><?php echo $row->client; ?></td>
 					<td width="100"><?php echo $row->item; ?></td>
 					<td width="150"><?php echo $row->serial_num; ?></td>
-					<td width="150"><?php echo $row->s_ni_po; ?></td>
-					<td width="150"><?php echo $row->s_git_date; ?></td>
+					<td width="150"><?php echo $row->b_date; ?></td>
+					<td width="150"><?php echo $row->b_return_date; ?></td>
 					<td><a href="<?php echo site_url("sys_sn/update_sn/".$row->id); ?>" class="uk-button">檢視/更新</a></td>
 				</tr>
 				<?php } ?>

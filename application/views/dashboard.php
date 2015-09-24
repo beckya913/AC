@@ -37,7 +37,9 @@
 							<h3>序號管理</a></h3>
 							<ul class="uk-list uk-list-line">
 								<li><a href="<?php echo base_url(); ?>sys_sn/create_sn" >新增記錄</a></li>
-								<li><a href="<?php echo base_url(); ?>sys_sn/view" >更新記錄</a></li>
+								<li><a href="<?php echo base_url(); ?>sys_sn/view" >檢視售出記錄</a></li>
+								<li><a href="<?php echo base_url(); ?>sys_sn/view" >檢視借出記錄</a></li>
+								<li><a href="<?php echo base_url(); ?>sys_sn/view" >檢視借入記錄</a></li>
 							</ul>
 						</td>
 						<td>

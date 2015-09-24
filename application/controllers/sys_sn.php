@@ -130,16 +130,10 @@ class Sys_sn extends CI_Controller {
 					's_client_po' => $this->input->post('s_client_po'),
 					's_price' => $this->input->post('s_price'),
 					's_warranty' => $this->input->post('s_warranty'),
-					'l_id' => $this->input->post('l_id'),
-					'l_ni_date' => $this->input->post('l_ni_date'),
-					'l_ni_po' => $this->input->post('l_ni_po'),
 					'l_date' => $this->input->post('l_date'),
 					'l_return_date' => $this->input->post('l_return_date'),
 					'l_dongle' => $this->input->post('l_dongle'),
 					'l_cable' => $this->input->post('l_cable'),
-					'b_id' => $this->input->post('b_id'),
-					'b_ni_date' => $this->input->post('b_ni_date'),
-					'b_ni_po' => $this->input->post('b_ni_po'),
 					'b_date' => $this->input->post('b_date'),
 					'b_return_date' => $this->input->post('b_return_date'),
 					'b_dongle' => $this->input->post('b_dongle'),
@@ -198,16 +192,10 @@ class Sys_sn extends CI_Controller {
 					's_client_po' => $this->input->post('s_client_po'),
 					's_price' => $this->input->post('s_price'),
 					's_warranty' => $this->input->post('s_warranty'),
-					'l_id' => $this->input->post('l_id'),
-					'l_ni_date' => $this->input->post('l_ni_date'),
-					'l_ni_po' => $this->input->post('l_ni_po'),
 					'l_date' => $this->input->post('l_date'),
 					'l_return_date' => $this->input->post('l_return_date'),
 					'l_dongle' => $this->input->post('l_dongle'),
 					'l_cable' => $this->input->post('l_cable'),
-					'b_id' => $this->input->post('b_id'),
-					'b_ni_date' => $this->input->post('b_ni_date'),
-					'b_ni_po' => $this->input->post('b_ni_po'),
 					'b_date' => $this->input->post('b_date'),
 					'b_return_date' => $this->input->post('b_return_date'),
 					'b_dongle' => $this->input->post('b_dongle'),
@@ -236,6 +224,22 @@ class Sys_sn extends CI_Controller {
 		$this->load->model('Git_db');
 		$data['results'] = $this->Git_db->get_sn_lend_returned();
 		$this->load->view('view_sn_lend', $data);
+		
+	}
+
+	public function view_borrow(){
+		
+		$this->load->model('Git_db');
+		$data['results'] = $this->Git_db->get_sn_borrow_not_return();
+		$this->load->view('view_sn_borrow', $data);
+		
+	}
+
+	public function view_borrow_returned(){
+		
+		$this->load->model('Git_db');
+		$data['results'] = $this->Git_db->get_sn_borrow_returned();
+		$this->load->view('view_sn_borrow', $data);
 		
 	}
 	//End

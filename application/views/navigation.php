@@ -8,7 +8,9 @@
 		<li class="uk-nav-divider"></li>
 		<li class="uk-nav-header">序號管理</li>
 		<li><a href="<?php echo base_url(); ?>sys_sn/create_sn">新增記錄</a></li>
-		<li><a href="<?php echo base_url(); ?>sys_sn/view">檢視/更新記錄</a></li>
+		<li><a href="<?php echo base_url(); ?>sys_sn/view">檢視/更新售出記錄</a></li>
+		<li><a href="<?php echo base_url(); ?>sys_sn/view_lend">檢視/更新借出記錄</a></li>
+		<li><a href="<?php echo base_url(); ?>sys_sn/view_borrow">檢視/更新借入記錄</a></li>
 		<li class="uk-nav-divider"></li>
 		<li class="uk-nav-header">RMA 管理</li>
 		<li><a href="<?php echo base_url(); ?>sys_rma/create">新增記錄</a></li>
