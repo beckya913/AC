@@ -242,5 +242,13 @@ class Sys_sn extends CI_Controller {
 		$this->load->view('view_sn_borrow', $data);
 		
 	}
+
+	public function view_stock(){
+		
+		$this->load->model('Git_db');
+		$data['results'] = $this->Git_db->get_sn_stock();
+		$this->load->view('view_sn_stock', $data);
+		
+	}
 	//End
 }

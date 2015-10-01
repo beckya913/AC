@@ -131,13 +131,28 @@ class Sys_rma extends CI_Controller {
 			}
 	}
 
-	public function view(){
-		
+		public function view(){
+
 		$this->load->model('Git_db');
 		$data['results_rma'] = $this->Git_db->get_rma_detail();
 		$this->load->view('view_rma', $data);
 		
 	}
+
+	/* with pagination 
+
+		public function view(){
+		$this->load->model('Git_db');
+		$this->load->library('pagination');
+		$config['base_url'] = base_url() . "sys_rma/view";
+		$config['total_rows'] = $this->db->get('rma_detail')->num_rows();
+		$config['per_page'] = 10;
+		$config['num_links'] = 20;
+		$this->pagination->initialize($config); 
+		$data['results_rma'] = $this->Git_db->get_rma_detail($config['per_page'],$this->uri->segment(3));
+		$this->load->view('view_rma', $data);
+		
+	} */ 
 
 	public function view_filter() {
 

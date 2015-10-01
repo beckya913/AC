@@ -87,6 +87,15 @@ class Git_db extends CI_Model {
 		
 	}
 
+	function get_sn_stock(){
+	
+		$query = $this->db->order_by('time', 'desc')
+						  ->where('client','GIT')
+						  ->get('sn_record'); 
+		return $query->result();
+		
+	}
+
 	function get_sn_detail_all($id){
 	
 		$query = $this->db->get_where('sn_record',array('id'=>$id));
@@ -94,10 +103,22 @@ class Git_db extends CI_Model {
 
 	}
 
-	function get_rma_detail(){
-		$query = $this->db->order_by('time', 'desc')->get('rma_detail'); 
+	function get_rma_detail($limit=null,$offset=NULL){
+		$query = $this->db->order_by('time', 'desc')
+						  ->limit($limit, $offset)
+		                  ->get('rma_detail'); 
+
 		return $query->result();
 	}
+
+	/* With Pagination 
+
+	function get_rma_detail($limit=null,$offset=NULL){
+		$query = $this->db->order_by('time', 'desc')
+						  ->limit($limit, $offset)
+		                  ->get('rma_detail'); 
+		return $query->result();
+	} */
 
 	function get_rma_detail_all($id){
 		$query = $this->db->get_where('rma_detail',array('id'=>$id));
