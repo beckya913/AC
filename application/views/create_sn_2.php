@@ -20,6 +20,25 @@
 		$('#basic_info textarea').prop('readonly', true);
 	});
 	</script>-->
+	<!-- Add/Remove rows dynamiclly -->
+	<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#add").click(function() {
+          $('#items tbody>tr:last').clone(true).insertAfter('#items tbody>tr:last');
+          $('#items tbody>tr:last').find("input:text").val('');
+          return false;
+        });
+
+        $("#remove").click(function() {
+        	if ($('#items tbody>tr').size()>2) {
+        		$('#items tbody>tr:last').remove();
+        	} else { alert('表格至少要有一列');
+        	};
+        });
+
+    });
+</script>
 </head>
 <body>
 <?php include("header.php"); //表頭 ?>
@@ -47,6 +66,21 @@
 							<tr><td>項目名稱</td><td><input name="item" value="<?php echo $item; ?>"></td></tr>
 							<tr><td>敘述</td><td><textarea name="detail" rows="4" cols="50"><?php echo $detail; ?></textarea></td></tr>
 							<tr><td>備註</td><td><textarea name="note" rows="4" cols="50"></textarea></td></tr>
+							<tr><td>相關序號</td>
+								<td>
+									<input id="add" value="新增一列" type="button" class="">
+									<input id="remove" value="移除最後一列" type="button" class="">
+									<table id="items" class="" border="0" cellspacing="0" cellpadding="0">
+										<tbody>
+										    
+										    <tr>
+										    	<td>項目名稱 <input type="text" name="related_item[]" value="" class="uk-form-small"></td>
+										    	<td>序號 <input type="text" name="related_sn[]" value="" class="uk-form-small"></td>
+										    </tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
 							<tr><td>P/N</td><td><input name="product_num" value="<?php echo $product_num; ?>"></td></tr>
 							<tr><td>牌價</td><td><input name="price" value="<?php echo $price; ?>"></td></tr>
 						</tbody>

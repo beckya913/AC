@@ -77,7 +77,7 @@
 		<hr>
 		<table id="sn_list" class="uk-table uk-table-striped">
 			<thead>
-				<tr><th>客戶</th><th>產品</th><th>序號</th><th>備註</th><th></th></tr>
+				<tr><th>客戶</th><th>產品</th><th>序號</th><th>NI出廠日</th><th>備註</th><th></th></tr>
 			</thead>
 			<tbody>
 				<?php foreach($results as $row){ ?>
@@ -85,7 +85,8 @@
 					<td width="100"><?php echo $row->client; ?></td>
 					<td width="120"><?php echo $row->item; ?></td>
 					<td width="200"><?php echo $row->serial_num; ?></td>
-					<td width="250"><?php echo $row->note; ?></td>
+					<td width="150"><?php echo $row->s_ni_date; ?></td>
+					<td width="200"><?php echo $row->note; ?></td>
 					
 					<td><a href="<?php echo site_url("sys_sn/update_sn/".$row->id); ?>" class="uk-button">檢視/更新</a></td>
 				</tr>

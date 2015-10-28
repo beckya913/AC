@@ -140,7 +140,20 @@ class Sys_sn extends CI_Controller {
 					'b_cable' => $this->input->post('b_cable'),
 					'creator' => $this->input->post('creator')
 				);
+        
+        $newRow_item =array();
+		$count = count($this->input->post('related_item'));
+		for($i=0; $i<$count; $i++) {
+		$newRow_item[] = array(
+		'serial_num' => $this->input->post('serial_num'),
+		'related_item' => $this->input->post('related_item')[$i], 
+		'related_sn' => $this->input->post('related_sn')[$i]
+					
+					);
+				}
+
 		$this->Git_db->insert_sn($newRow);
+		$this->db->insert_batch('sn_related_sn', $newRow_item);
 		echo "<html><head><meta charset='utf-8'></head><body><script type='text/javascript'>
 					alert('新增序號成功！');
 					window.location.href='create_sn';
@@ -203,8 +216,20 @@ class Sys_sn extends CI_Controller {
 					'creator' => $this->input->post('creator')
 				);
 
+		$newRow_item =array();
+		$count = count($this->input->post('related_item'));
+		for($i=0; $i<$count; $i++) {
+		$newRow_item[] = array(
+		'serial_num' => $this->input->post('serial_num'),
+		'related_item' => $this->input->post('related_item')[$i], 
+		'related_sn' => $this->input->post('related_sn')[$i]
+					
+					);
+				}
+
 		$this->db->where('id', $this->input->post('id'));
 		$this->db->update('sn_record', $data);
+		$this->db->insert_batch('sn_related_sn', $newRow_item);
 		echo "<html><head><meta charset='utf-8'></head><body><script type='text/javascript'>
 					alert('更新序號資料成功！');
 					window.location.href='view';

@@ -21,6 +21,25 @@
 		$('#basic_info textarea').prop('readonly', true);
 	});
 	</script>-->
+	<!-- Add/Remove rows dynamiclly -->
+	<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#add").click(function() {
+          $('#items tbody>tr:last').clone(true).insertAfter('#items tbody>tr:last');
+          $('#items tbody>tr:last').find("input:text").val('');
+          return false;
+        });
+
+        $("#remove").click(function() {
+        	if ($('#items tbody>tr').size()>2) {
+        		$('#items tbody>tr:last').remove();
+        	} else { alert('表格至少要有一列');
+        	};
+        });
+
+    });
+</script>
 </head>
 <body>
 <?php include("header.php"); //表頭 ?>
@@ -83,6 +102,33 @@
 							      'cols'        => '70',
 							    ); 
 							    echo form_textarea($data); ?>
+							</td></tr>
+							<tr><td>相關序號</td><td>
+								
+								<ol>
+									<?php 
+							//取得相關序號
+							$query = $this->db->get_where('sn_related_sn',array('serial_num'=>$serial_num));
+							foreach ($query->result() as $row3)
+							{ ?>
+									
+									<li><?php echo $row3->related_item; ?> - <a href="<?php $query2 = $this->db->get_where('sn_record',array('serial_num'=>$row3->related_sn));
+										foreach ($query2->result() as $row4) {
+												  	$related = $row4->id;
+												  } echo site_url("sys_sn/update_sn/".$related); ?>" target="_blank"><?php echo $row3->related_sn; ?></a></li>
+									<?php } ?>
+								</ol>
+								<input id="add" value="新增一列" type="button" class="">
+									<input id="remove" value="移除最後一列" type="button" class="">
+									<table id="items" class="" border="0" cellspacing="0" cellpadding="0">
+										<tbody>
+										    
+										    <tr>
+										    	<td>項目名稱 <input type="text" name="related_item[]" value="" class="uk-form-small"></td>
+										    	<td>序號 <input type="text" name="related_sn[]" value="" class="uk-form-small"></td>
+										    </tr>
+										</tbody>
+									</table>
 							</td></tr>
 							<tr><td>P/N</td><td><?php echo form_input('product_num', $product_num); ?></td></tr>
 							<tr><td>牌價</td><td><?php echo form_input('price', $price); ?></td></tr>
