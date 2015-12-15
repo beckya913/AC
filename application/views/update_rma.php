@@ -101,8 +101,12 @@ foreach($results_all as $row){
 								<td><input type="file" name="attachment" value="" /></td>
 							</tr>
 							<tr>
+								<td colspan="2"></td>
+								<td colspan="2">(附件請注意：上限15mb，檔名不得含中文字，壓縮檔使用zip)</td>
+							</tr>
+							<tr>
 								<td>備註</td>
-								<td colspan="3"><textarea name="remark" rows="5" cols="70"><?php echo $remark; ?></textarea></td>
+								<td colspan="3"><textarea name="remark" rows="5" cols="70"><?php echo strip_tags($remark); ?></textarea></td>
 							</tr>
 						</tbody>
 					</table>

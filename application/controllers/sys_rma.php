@@ -16,8 +16,8 @@ class Sys_rma extends CI_Controller {
 	                  'upload_path'     => "./uploads/",
 	                  'allowed_types'   => "gif|jpg|png|jpeg|pdf|doc|xml|zip|rar|txt",
 	                  'overwrite'       => TRUE,
-	                  'max_size'        => "5000KB",
-	                  /*'max_height'      => "3000",
+	                  /*'max_size'        => "5000KB",
+	                  'max_height'      => "3000",
 	                  'max_width'       => "3000"*/
 
 	                );
@@ -181,8 +181,8 @@ class Sys_rma extends CI_Controller {
 	                  'upload_path'     => "./uploads/",
 	                  'allowed_types'   => "gif|jpg|png|jpeg|pdf|doc|xml|zip|rar|txt",
 	                  'overwrite'       => TRUE,
-	                  'max_size'        => "5000KB",
-	                  /*'max_height'      => "3000",
+	                  /*'max_size'        => "5000KB",
+	                  'max_height'      => "3000",
 	                  'max_width'       => "3000"*/
 
 	                );

@@ -128,6 +128,7 @@ foreach ($query->result() as $row2){ $creator = $row2->name; }
 								<td>附件</td>
 								<td><input type="file" name="attachment" value="" /></td>
 							</tr>
+							<tr><td colspan="4">(附件請注意：上限15mb，檔名不得含中文字，壓縮檔使用zip)</td></tr>
 							<tr>
 								<td>備註</td>
 								<td colspan="3"><textarea name="remark" rows="5" cols="70"></textarea></td>
